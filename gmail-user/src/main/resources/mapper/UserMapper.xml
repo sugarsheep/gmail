@@ -3,4 +3,8 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sugar.gmail.user.mapper.UserMapper">
+
+    <select id="selectAllUser" resultType="com.sugar.gmail.user.bean.UmsMember">
+        select * from ums_member
+    </select>
 </mapper>
