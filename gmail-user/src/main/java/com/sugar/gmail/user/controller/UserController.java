@@ -1,26 +1,32 @@
 package com.sugar.gmail.user.controller;
 
-import com.sugar.gmail.user.bean.UmsMember;
+import com.sugar.gmail.user.common.ResponseBean;
 import com.sugar.gmail.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
 @RestController
+@RequestMapping("/user")
 public class UserController {
 
     @Autowired
     private UserService userService;
 
-    @GetMapping("getAllUser")
-    public List<UmsMember > getAllUser(){
-        return userService.getAllUser();
+    @GetMapping("/getAllUser")
+    public ResponseBean getAllUser() {
+        return new ResponseBean().success(userService.getAllUser(), "success");
     }
 
-    @GetMapping("index")
-    public String index(){
-        return "hello";
+    @GetMapping("/getUserById")
+    public ResponseBean getUserById(Long userId) {
+        return new ResponseBean().success(userService.getUserById(userId), "success");
     }
+
+    @GetMapping("/getUserAddressByUserId")
+    public ResponseBean getUserAddressByUserId(String userId) {
+        return new ResponseBean().success(userService.getUserAddressByUserId(userId), "success");
+    }
+
 }
