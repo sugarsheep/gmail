@@ -9,6 +9,7 @@ import tk.mybatis.spring.annotation.MapperScan;
 public class GmailUserApplication {
 
     public static void main(String[] args) {
+        System.out.println("111");
         SpringApplication.run(GmailUserApplication.class, args);
     }
 
