@@ -1,8 +1,8 @@
 package com.sugar.gmail.user.controller;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.sugar.gmail.common.util.ResponseBean;
 import com.sugar.gmail.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/user")
 public class UserController {
 
-    @Autowired
+    @Reference
     private UserService userService;
 
     @GetMapping("/getAllUser")
