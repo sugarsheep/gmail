@@ -8,6 +8,7 @@ class GmailUserServiceApplicationTests {
 
     @Test
     void contextLoads() {
+        System.out.println("233");
     }
 
 }

@@ -1,4 +1,4 @@
-package com.sugar.gmail.user.impl;
+package com.sugar.gmail.user.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.sugar.gmail.bean.UmsMember;
